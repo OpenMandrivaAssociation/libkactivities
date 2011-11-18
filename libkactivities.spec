@@ -1,7 +1,7 @@
 Name:    libkactivities
 Summary: API for using and interacting with Activities 
 Version: 6.1
-Release: 2
+Release: 3
 Epoch:   5
 License: GPLv2+ and LGPLv2+
 URL:     https://projects.kde.org/projects/kde/kdelibs/kactivities 
@@ -48,8 +48,8 @@ Librairie File needed by %name
 %package  devel
 Summary:  Developer files for %{name}
 Requires: kdelibs4-devel
-Requires: %libkactivities = %version-%release
-Provides: %name-devel = %version-%release
+Requires: %libkactivities = %EVRD
+Provides: %name-devel = %EVRD
 
 %description devel
 %{summary}.
