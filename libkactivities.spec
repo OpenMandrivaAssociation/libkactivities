@@ -1,7 +1,7 @@
 Name:    libkactivities
 Summary: API for using and interacting with Activities 
 Version: 6.1
-Release: 3
+Release: 4
 Epoch:   5
 License: GPLv2+ and LGPLv2+
 URL:     https://projects.kde.org/projects/kde/kdelibs/kactivities 
@@ -11,7 +11,7 @@ BuildRequires: kdelibs4-devel >= 5:4.7
 
 # libkactivities moved from kdelibs, but turns out there's no actual conflicts
 # kactivitymanagerd moved here from kde-runtime 
-Conflicts: kdebase-runtime < 1:4.7.3-10
+Conflicts: kdebase4-runtime < 1:4.7.3-10
 
 %description
 API for using and interacting with Activities as a consumer, 
