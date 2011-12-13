@@ -59,7 +59,7 @@ Provides: %name-devel = %EVRD
 %{_kde_libdir}/libkactivities.so
 %{_libdir}/cmake/KActivities
 %{_libdir}/pkgconfig/libkactivities.pc
-%{_kde_includedir}/KDE/Activities
+%{_kde_includedir}/KDE/KActivities
 %{_kde_includedir}/kactivities
 
 #-----------------------------------------------------------------------
