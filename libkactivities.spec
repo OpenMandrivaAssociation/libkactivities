@@ -1,11 +1,12 @@
-Name:    libkactivities
+%define  oname kactivities
+Name:    lib%oname
 Summary: API for using and interacting with Activities 
-Version: 6.1
-Release: 4
-Epoch:   5
+Version: 4.7.90
+Release: 1
+Epoch:   6
 License: GPLv2+ and LGPLv2+
 URL:     https://projects.kde.org/projects/kde/kdelibs/kactivities 
-Source0: ftp://ftp.kde.org/pub/kde/stable/active/1.0/src/%name-%{version}.tar.bz2
+Source0: ftp://ftp.kde.org/pub/kde/stable/active/1.0/src/%oname-%{version}.tar.bz2
 Group:   System/Libraries
 BuildRequires: kdelibs4-devel >= 5:4.7 
 
@@ -58,13 +59,13 @@ Provides: %name-devel = %EVRD
 %{_kde_libdir}/libkactivities.so
 %{_libdir}/cmake/KActivities
 %{_libdir}/pkgconfig/libkactivities.pc
-%{_includedir}/KDE/Activities
-%{_includedir}/kactivities
+%{_kde_includedir}/KDE/Activities
+%{_kde_includedir}/kactivities
 
+#-----------------------------------------------------------------------
 
 %prep
-%setup -q 
-
+%setup -q -n %oname-%version
 
 %build
 %cmake_kde4
