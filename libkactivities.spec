@@ -1,7 +1,8 @@
 %define  oname kactivities
+
 Name:    lib%oname
 Summary: API for using and interacting with Activities 
-Version: 4.7.90
+Version: 4.7.95
 Release: 1
 Epoch:   6
 License: GPLv2+ and LGPLv2+
