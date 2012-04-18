@@ -7,7 +7,7 @@ Release: 1
 Epoch:   6
 License: GPLv2+ and LGPLv2+
 URL:     https://projects.kde.org/projects/kde/kdelibs/kactivities 
-Source0: ftp://ftp.kde.org/pub/kde/stable/active/1.0/src/%oname-%{version}.tar.bz2
+Source0: ftp://ftp.kde.org/pub/kde/stable/active/1.0/src/%oname-%{version}.tar.xz
 Group:   System/Libraries
 BuildRequires: kdelibs4-devel >= 5:4.7 
 
