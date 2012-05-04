@@ -24,9 +24,11 @@ application adding information to them or as an activity manager.
 %{_kde_libdir}/kde4/activitymanager_plugin_dummy.so
 %{_kde_libdir}/kde4/activitymanager_plugin_nepomuk.so
 %{_kde_libdir}/kde4/activitymanager_plugin_slc.so
+%{_kde_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
 %{_kde_datadir}/kde4/services/activitymanager-plugin-dummy.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-nepomuk.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-slc.desktop
+%{_kde_datadir}/kde4/services/activitymanager-plugin-globalshortcuts.desktop
 %{_kde_datadir}/kde4/services/kactivitymanagerd.desktop
 %{_kde_datadir}/kde4/services/kded/activitymanager.desktop
 %{_kde_datadir}/kde4/servicetypes/activitymanager-plugin.desktop
