@@ -2,7 +2,7 @@
 
 Name:    lib%oname
 Summary: API for using and interacting with Activities 
-Version: 4.8.2
+Version: 4.8.3
 Release: 1
 Epoch:   6
 License: GPLv2+ and LGPLv2+
