@@ -2,7 +2,7 @@
 
 Name:		lib%{oname}
 Summary:	API for using and interacting with Activities
-Version:	4.8.95
+Version:	4.8.97
 Release:	1
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
@@ -21,7 +21,6 @@ application adding information to them or as an activity manager.
 
 %files
 %{_kde_bindir}/kactivitymanagerd
-%{_kde_libdir}/kde4/activitymanager_plugin_activityranking.so
 %{_kde_libdir}/kde4/activitymanager_plugin_dummy.so
 %{_kde_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
 %{_kde_libdir}/kde4/activitymanager_plugin_nepomuk.so
@@ -32,7 +31,6 @@ application adding information to them or as an activity manager.
 %{_kde_libdir}/kde4/kactivitymanagerd_fileitem_linking_plugin.so
 %{_kde_libdir}/kde4/kio_activities.so
 %{_kde_datadir}/kde4/services/activities.protocol
-%{_kde_datadir}/kde4/services/activitymanager-plugin-activityranking.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-dummy.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-nepomuk.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-slc.desktop
