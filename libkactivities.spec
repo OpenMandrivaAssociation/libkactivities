@@ -2,12 +2,12 @@
 
 Name:		lib%{oname}
 Summary:	API for using and interacting with Activities
-Version:	4.8.97
-Release:	1
+Version: 4.9.0
+Release: 1
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
 URL:		https://projects.kde.org/projects/kde/kdelibs/kactivities
-Source0:	ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{oname}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{oname}-%{version}.tar.xz
 Group:		System/Libraries
 BuildRequires:	kdelibs4-devel >= 5:4.8.80
 
