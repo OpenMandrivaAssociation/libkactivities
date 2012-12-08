@@ -2,8 +2,8 @@
 
 Name:		lib%{oname}
 Summary:	API for using and interacting with Activities
-Version: 4.9.3
-Release: 1
+Version:	4.9.4
+Release:	1
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
 URL:		https://projects.kde.org/projects/kde/kdelibs/kactivities
@@ -87,4 +87,78 @@ Provides:	%{name}-devel = %{EVRD}
 
 %install
 %makeinstall_std -C build
+
+%changelog
+* Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.9.4-1
+- New version 4.9.4
+
+* Wed Nov 07 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.9.3-1
+- New version 4.9.3
+
+* Thu Oct 04 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.9.2-1
+- New version 4.9.2
+
+* Sat Sep 08 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.9.1-1
+- New version 4.9.1
+
+* Fri Aug 03 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.9.0-1
+- New version 4.9.0
+
+* Thu Jul 12 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.8.97-1
+- New version 4.8.97
+- Update files
+
+* Thu Jun 28 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.8.95-1
+- Update to 4.8.95
+
+* Tue Jun 19 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.8.90-1
+- Update to 4.8.90
+- Add cmake options
+- Update file list
+
+* Fri Jun 08 2012 Arkady L. Shane <arkady.shane@rosalab.ru> 6:4.8.4-1
+- update to 4.8.4
+
+* Thu May 10 2012 Arkady L. Shane <arkady.shane@rosalab.ru> 6:4.8.3-1
+- update to 4.8.3
+
+* Wed Apr 4 2012 Alex Burmashev <alex.burmashev@rosalab.ru>
+- update to 4.8.2
+
+* Sun Mar 11 2012 Arkady L. Shane <arkady.shane@rosalab.ru> 6:4.8.1-1
+- update to 4.8.1
+
+* Thu Jan 19 2012 Nicolas Lécureuil <nlecureuil@mandriva.com> 6:4.8.0-1
++ Revision: 762433
+- New upstream tarball
+
+* Fri Jan 06 2012 Nicolas Lécureuil <nlecureuil@mandriva.com> 6:4.7.97-1
++ Revision: 758048
+- New upstream tarball
+
+* Sun Jan 01 2012 Nicolas Lécureuil <nlecureuil@mandriva.com> 6:4.7.95-1
++ Revision: 748555
+- New version
+- New version
+
+* Wed Dec 14 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 6:4.7.90-1
++ Revision: 740797
+- Fix file list
+- New version 4.7.90
+
+* Sat Nov 26 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 5:6.1-4
++ Revision: 733487
+- Fix conflicts
+
+* Fri Nov 18 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 5:6.1-3
++ Revision: 731559
+- Fix use of epoch in provides/requires
+
+* Thu Nov 17 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 5:6.1-2
++ Revision: 731510
+- Add a provide in the devel package
+
+* Thu Nov 17 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 5:6.1-1
++ Revision: 731502
+- Import libkactivities
 
