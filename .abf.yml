@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   kactivities-4.9.4.tar.xz: 1e3b69751d0da8416215038bc140748df23d4f37
+sources:
+  kactivities-4.9.98.tar.xz: 004cf0e7d90fd113f1334d337db1fccb90135139

@@ -2,14 +2,22 @@
 
 Name:		lib%{oname}
 Summary:	API for using and interacting with Activities
-Version:	4.9.4
+Version:	4.9.98
 Release:	1
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
 URL:		https://projects.kde.org/projects/kde/kdelibs/kactivities
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{oname}-%{version}.tar.xz
+%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %is_beta
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Source0:	ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{oname}-%{version}.tar.xz
 Group:		System/Libraries
-BuildRequires:	kdelibs4-devel >= 5:4.8.80
+BuildRequires:	kdelibs4-devel >= 5:4.9.80
+BuildRequires:	nepomuk-core-devel
+BuildRequires:	soprano-devel
 
 # libkactivities moved from kdelibs, but turns out there's no actual conflicts
 # kactivitymanagerd moved here from kde-runtime
@@ -21,26 +29,31 @@ application adding information to them or as an activity manager.
 
 %files
 %{_kde_bindir}/kactivitymanagerd
-%{_kde_libdir}/kde4/activitymanager_plugin_dummy.so
+%{_kde_libdir}/kde4/activitymanager_plugin_activityranking.so
 %{_kde_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
-%{_kde_libdir}/kde4/activitymanager_plugin_nepomuk.so
 %{_kde_libdir}/kde4/activitymanager_plugin_slc.so
 %{_kde_libdir}/kde4/activitymanager_plugin_sqlite.so
+%{_kde_libdir}/kde4/activitymanager_plugin_virtualdesktopswitch.so
 %{_kde_libdir}/kde4/activitymanager_uihandler_declarative.so
 %{_kde_libdir}/kde4/activitymanager_uihandler_kdialog.so
 %{_kde_libdir}/kde4/kactivitymanagerd_fileitem_linking_plugin.so
 %{_kde_libdir}/kde4/kio_activities.so
 %{_kde_datadir}/kde4/services/activities.protocol
-%{_kde_datadir}/kde4/services/activitymanager-plugin-dummy.desktop
-%{_kde_datadir}/kde4/services/activitymanager-plugin-nepomuk.desktop
+%{_kde_datadir}/kde4/services/activitymanager-plugin-activityranking.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-slc.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-sqlite.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-globalshortcuts.desktop
 %{_kde_datadir}/kde4/services/kactivitymanagerd.desktop
 %{_kde_datadir}/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
+%{_kde_datadir}/kde4/services/activitymanager-plugin-virtualdesktopswitch.desktop
+%{_kde_datadir}/kde4/services/kcm_activities.desktop
 %{_kde_datadir}/kde4/servicetypes/activitymanager-plugin.desktop
 %{_kde_appsdir}/plasma/packages/org.kde.ActivityManager.UiHandler
 %{_datadir}/ontology/kde/kao.*
+%{_kde_libdir}/kde4/imports/org/kde/activities
+%{_kde_libdir}/kde4/kcm_activities.so
+%{_kde_appsdir}/activitymanager
+
 
 #-----------------------------------------------------------------------
 
@@ -58,10 +71,25 @@ Library file needed by %{name}
 
 #-----------------------------------------------------------------------
 
+%define libkactivities_models_major 1
+%define libkactivities_models %mklibname kactivities-models %{libkactivities_models_major}
+
+%package -n %{libkactivities_models}
+Summary:	Runtime library for %{name}-models
+
+%description -n %{libkactivities_models}
+Library file needed by %{name}-models
+
+%files -n %{libkactivities_models}
+%{_kde_libdir}/libkactivities-models.so.%{libkactivities_models_major}*
+
+#-----------------------------------------------------------------------
+
 %package devel
 Summary:	Developer files for %{name}
 Requires:	kdelibs4-devel
 Requires:	%{libkactivities} = %{EVRD}
+Requires:	%{libkactivities_models} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 
 %description devel
@@ -69,10 +97,13 @@ Provides:	%{name}-devel = %{EVRD}
 
 %files devel
 %{_kde_libdir}/libkactivities.so
+%{_kde_libdir}/libkactivities-models.so
 %{_libdir}/cmake/KActivities
-%{_libdir}/pkgconfig/libkactivities.pc
+%_libdir/cmake/KActivities-Models
+%{_libdir}/pkgconfig/*.pc
 %{_kde_includedir}/KDE/KActivities
 %{_kde_includedir}/kactivities
+%{_kde_includedir}/kactivities-models
 
 #-----------------------------------------------------------------------
 
