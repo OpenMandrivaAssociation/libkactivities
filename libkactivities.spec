@@ -99,7 +99,7 @@ Provides:	%{name}-devel = %{EVRD}
 %{_kde_libdir}/libkactivities.so
 %{_kde_libdir}/libkactivities-models.so
 %{_libdir}/cmake/KActivities
-%_libdir/cmake/KActivities-Models
+%{_libdir}/cmake/KActivities-Models
 %{_libdir}/pkgconfig/*.pc
 %{_kde_includedir}/KDE/KActivities
 %{_kde_includedir}/kactivities
