@@ -2,7 +2,7 @@
 
 Name:		lib%{oname}
 Summary:	API for using and interacting with Activities
-Version:	4.10.1
+Version:	4.10.2
 Release:	1
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
@@ -120,6 +120,9 @@ Provides:	%{name}-devel = %{EVRD}
 %makeinstall_std -C build
 
 %changelog
+* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.10.2-1
+- New version 4.10.2
+
 * Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.10.1-1
 - New version 4.10.1
 
