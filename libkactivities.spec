@@ -1,20 +1,20 @@
 %define oname kactivities
 
-Name:		lib%{oname}
 Summary:	API for using and interacting with Activities
-Version:	4.10.3
+Name:		libkactivities
+Version:	4.10.4
 Release:	1
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
-URL:		https://projects.kde.org/projects/kde/kdelibs/kactivities
-%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %is_beta
+Group:		Graphical desktop/KDE
+Url:		https://projects.kde.org/projects/kde/kdelibs/kactivities
+%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{oname}-%{version}.tar.xz
-Group:		System/Libraries
+Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{oname}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel >= 5:4.9.80
 BuildRequires:	nepomuk-core-devel
 BuildRequires:	soprano-devel
@@ -120,6 +120,9 @@ Provides:	%{name}-devel = %{EVRD}
 %makeinstall_std -C build
 
 %changelog
+* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.10.4-1
+- New version 4.10.4
+
 * Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.10.3-1
 - New version 4.10.3
 
