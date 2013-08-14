@@ -31,15 +31,15 @@ application adding information to them or as an activity manager.
 %{_kde_bindir}/kactivitymanagerd
 %{_kde_libdir}/kde4/activitymanager_plugin_activityranking.so
 %{_kde_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
+%{_kde_libdir}/kde4/activitymanager_plugin_nepomuk.so
 %{_kde_libdir}/kde4/activitymanager_plugin_slc.so
 %{_kde_libdir}/kde4/activitymanager_plugin_sqlite.so
 %{_kde_libdir}/kde4/activitymanager_plugin_virtualdesktopswitch.so
-%{_kde_libdir}/kde4/activitymanager_uihandler_declarative.so
-%{_kde_libdir}/kde4/activitymanager_uihandler_kdialog.so
 %{_kde_libdir}/kde4/kactivitymanagerd_fileitem_linking_plugin.so
 %{_kde_libdir}/kde4/kio_activities.so
 %{_kde_datadir}/kde4/services/activities.protocol
 %{_kde_datadir}/kde4/services/activitymanager-plugin-activityranking.desktop
+%{_kde_datadir}/kde4/services/activitymanager-plugin-nepomuk.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-slc.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-sqlite.desktop
 %{_kde_datadir}/kde4/services/activitymanager-plugin-globalshortcuts.desktop
@@ -48,7 +48,6 @@ application adding information to them or as an activity manager.
 %{_kde_datadir}/kde4/services/activitymanager-plugin-virtualdesktopswitch.desktop
 %{_kde_datadir}/kde4/services/kcm_activities.desktop
 %{_kde_datadir}/kde4/servicetypes/activitymanager-plugin.desktop
-%{_kde_appsdir}/plasma/packages/org.kde.ActivityManager.UiHandler
 %{_datadir}/ontology/kde/kao.*
 %{_kde_libdir}/kde4/imports/org/kde/activities
 %{_kde_libdir}/kde4/kcm_activities.so
@@ -122,6 +121,7 @@ Provides:	%{name}-devel = %{EVRD}
 %changelog
 * Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.11.0-1
 - New version 4.11.0
+- Updates files list
 
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.10.5-1
 - New version 4.10.5
