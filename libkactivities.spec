@@ -3,7 +3,7 @@
 Summary:	API for using and interacting with Activities
 Name:		libkactivities
 Version:	4.11.4
-Release:	1
+Release:	2
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/KDE
