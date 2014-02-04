@@ -2,7 +2,7 @@
 
 Summary:	API for using and interacting with Activities
 Name:		libkactivities
-Version:	4.12.1
+Version:	4.12.2
 Release:	1
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
@@ -119,6 +119,9 @@ Provides:	%{name}-devel = %{EVRD}
 %makeinstall_std -C build
 
 %changelog
+* Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.12.2-1
+- New version 4.12.2
+
 * Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 6:4.12.1-1
 - New version 4.12.1
 
