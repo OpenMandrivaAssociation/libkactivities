@@ -1,9 +1,12 @@
 %define oname kactivities
+# The activity manager is obsolete, Plasma Desktop's version should
+# be used instead these days.
+%bcond_with activitymanager
 
 Summary:	API for using and interacting with Activities
 Name:		libkactivities
 Version:	4.13.3
-Release:	3
+Release:	4
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/KDE
@@ -23,11 +26,14 @@ BuildRequires:	soprano-devel
 # kactivitymanagerd moved here from kde-runtime
 Conflicts:	kdebase4-runtime < 1:4.7.3-10
 
+Requires:	kactivities
+
 %description
 API for using and interacting with Activities as a consumer,
 application adding information to them or as an activity manager.
 
 %files
+%if %{with activitymanager}
 %{_kde_bindir}/kactivitymanagerd
 %{_kde_libdir}/kde4/activitymanager_plugin_activityranking.so
 %{_kde_libdir}/kde4/activitymanager_plugin_globalshortcuts.so
@@ -48,10 +54,11 @@ application adding information to them or as an activity manager.
 %{_kde_datadir}/kde4/services/activitymanager-plugin-virtualdesktopswitch.desktop
 %{_kde_datadir}/kde4/services/kcm_activities.desktop
 %{_kde_datadir}/kde4/servicetypes/activitymanager-plugin.desktop
-%{_datadir}/ontology/kde/kao.*
-%{_kde_libdir}/kde4/imports/org/kde/activities
 %{_kde_libdir}/kde4/kcm_activities.so
 %{_kde_appsdir}/activitymanager
+%endif
+%{_datadir}/ontology/kde/kao.*
+%{_kde_libdir}/kde4/imports/org/kde/activities
 
 
 #-----------------------------------------------------------------------
@@ -112,7 +119,11 @@ Provides:	%{name}-devel = %{EVRD}
 %build
 %cmake_kde4 \
 	-DKACTIVITIES_BUILD_NEPOMUK_PLUGIN:bool=ON \
-	-DKACTIVITIES_BUILD_DUMMY_PLUGIN:bool=ON
+	-DKACTIVITIES_BUILD_DUMMY_PLUGIN:bool=ON \
+%if ! %{with activitymanager}
+	-DKACTIVITIES_LIBRARY_ONLY:BOOL=ON
+%endif
+
 %make
 
 %install
