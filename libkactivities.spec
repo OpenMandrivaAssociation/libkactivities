@@ -101,7 +101,10 @@ Library file needed by %{name}-models
 Summary:	Developer files for %{name}
 Requires:	kdelibs4-devel
 Requires:	%{libkactivities} = %{EVRD}
+%if %{with nepomuk}
 Requires:	%{libkactivities_models} = %{EVRD}
+%endif
+
 Provides:	%{name}-devel = %{EVRD}
 
 %description devel
