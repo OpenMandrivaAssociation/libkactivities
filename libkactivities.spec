@@ -61,8 +61,9 @@ application adding information to them or as an activity manager.
 %{_kde_appsdir}/activitymanager
 %endif
 %{_datadir}/ontology/kde/kao.*
+%if %{with nepomuk}
 %{_kde_libdir}/kde4/imports/org/kde/activities
-
+%endif
 
 #-----------------------------------------------------------------------
 
@@ -79,6 +80,7 @@ Library file needed by %{name}
 %{_kde_libdir}/libkactivities.so.%{libkactivities_major}*
 
 #-----------------------------------------------------------------------
+%if %{with nepomuk}
 
 %define libkactivities_models_major 1
 %define libkactivities_models %mklibname kactivities-models %{libkactivities_models_major}
@@ -92,6 +94,7 @@ Library file needed by %{name}-models
 %files -n %{libkactivities_models}
 %{_kde_libdir}/libkactivities-models.so.%{libkactivities_models_major}*
 
+%endif
 #-----------------------------------------------------------------------
 
 %package devel
@@ -106,14 +109,15 @@ Provides:	%{name}-devel = %{EVRD}
 
 %files devel
 %{_kde_libdir}/libkactivities.so
-%{_kde_libdir}/libkactivities-models.so
 %{_libdir}/cmake/KActivities
-%{_libdir}/cmake/KActivities-Models
 %{_libdir}/pkgconfig/*.pc
 %{_kde_includedir}/KDE/KActivities
 %{_kde_includedir}/kactivities
+%if %{with nepomuk}
 %{_kde_includedir}/kactivities-models
-
+%{_kde_libdir}/libkactivities-models.so
+%{_libdir}/cmake/KActivities-Models
+%endif
 #-----------------------------------------------------------------------
 
 %prep
