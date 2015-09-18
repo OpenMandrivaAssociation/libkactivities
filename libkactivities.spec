@@ -118,7 +118,7 @@ Provides:	%{name}-devel = %{EVRD}
 
 %prep
 %setup -q -n %{oname}-%{version}
-sed -i '1s/^/cmake_minimum_required(VERSION 3.1)\n/' CMakeLists.txt
+sed -i '1s/^/cmake_minimum_required(VERSION 2.8)\n/' CMakeLists.txt
 
 %build
 %cmake_kde4 \
