@@ -2,11 +2,12 @@
 # The activity manager is obsolete, Plasma Desktop's version should
 # be used instead these days.
 %bcond_with activitymanager
+%bcond_with nepomuk
 
 Summary:	API for using and interacting with Activities
 Name:		libkactivities
 Version:	4.13.3
-Release:	5
+Release:	6
 Epoch:		6
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/KDE
@@ -19,8 +20,10 @@ Url:		https://projects.kde.org/projects/kde/kdelibs/kactivities
 %endif
 Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{oname}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel >= 5:4.9.80
+%if %{with nepomuk}
 BuildRequires:	nepomuk-core-devel
 BuildRequires:	soprano-devel
+%endif
 
 # libkactivities moved from kdelibs, but turns out there's no actual conflicts
 # kactivitymanagerd moved here from kde-runtime
@@ -118,7 +121,9 @@ Provides:	%{name}-devel = %{EVRD}
 
 %build
 %cmake_kde4 \
+%if %{with nepomuk}
 	-DKACTIVITIES_BUILD_NEPOMUK_PLUGIN:bool=ON \
+%endif
 	-DKACTIVITIES_BUILD_DUMMY_PLUGIN:bool=ON \
 %if ! %{with activitymanager}
 	-DKACTIVITIES_LIBRARY_ONLY:BOOL=ON
