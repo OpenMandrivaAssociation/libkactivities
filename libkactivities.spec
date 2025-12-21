@@ -19,6 +19,7 @@ Url:		https://projects.kde.org/projects/kde/kdelibs/kactivities
 %define ftpdir stable
 %endif
 Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{oname}-%{version}.tar.xz
+BuildRequires:	make
 BuildRequires:	kdelibs4-devel >= 5:4.9.80
 %if %{with nepomuk}
 BuildRequires:	nepomuk-core-devel
